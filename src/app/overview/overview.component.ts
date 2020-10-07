@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
+import OverviewData from '../../assets/data/overview.json';
 
 @Component({
   selector: 'app-overview',
@@ -16,11 +17,8 @@ export class OverviewComponent implements OnInit {
   chartType = 'radar';
   chartLabels: Label[] = ['SourceControl', 'Development', 'Scripting', 'IaC', 'Containers', 'Orchestrators'];
 
-  chartData: ChartDataSets[] = [
-    { data: [1,2,3,2,4,5], label: 'DevOps' },
-    { data: [3,2,3,1,4,4], label: 'Java' },
-  ];
-
+  chartData: ChartDataSets[] = OverviewData.map((d) => ({data: d.data, label: d.capability }));
+  
   chartOptions = {
     responsive: true,
     scale: {
