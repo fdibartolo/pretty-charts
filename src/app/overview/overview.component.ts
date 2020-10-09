@@ -65,9 +65,9 @@ export class OverviewComponent {
     scale: {
       ticks: {
         display: false,
-        max: 5,
+        max: 100,
         min: 0,
-        stepSize: 1
+        stepSize: 10
       }
     },
     tooltips: {
@@ -80,13 +80,11 @@ export class OverviewComponent {
       callbacks: {
         title: ( chartTooltipItem, chartData ): string => {
           const skillName: Label = this.chartLabels[ chartTooltipItem[ 0 ].index ];
-          return `People with knowledge about "${ skillName }"`;
+          return `People % with knowledge about "${ skillName }"`;
         },
         label: ( chartTooltipItem, chartData ): string => {
           const capabilityName: string = chartData.datasets[ chartTooltipItem.datasetIndex ].label;
-          return ( Number( chartTooltipItem.value ) === 1 )
-            ? ` ${ capabilityName }: ${ chartTooltipItem.value } person`
-            : ` ${ capabilityName }: ${ chartTooltipItem.value } people`;
+          return ` ${ capabilityName }: ${ chartTooltipItem.value }%`;
         },
       }
     },
