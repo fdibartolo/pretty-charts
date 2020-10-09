@@ -39,12 +39,12 @@ export class OverviewComponent {
 
   chartType = 'radar';
   chartLabels: Label[ ] = [
-    'Source control',
-    'Development',
-    'Scripting',
-    'Infrastructure as code',
     'Containers',
+    'Development',
+    'Infrastructure as Code',
     'Orchestrators',
+    'Scripting',
+    'Source Control'
   ];
 
   chartData: ChartDataSets[] = OverviewData.map((d): ChartDataSets => ({
