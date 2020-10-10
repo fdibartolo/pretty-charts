@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 
 import { ChartsModule } from 'ng2-charts';
 import { OverviewComponent } from './overview/overview.component';
+import { DrilldownComponent } from './drilldown/drilldown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OverviewComponent
+    OverviewComponent,
+    DrilldownComponent
   ],
   imports: [
     BrowserModule,
