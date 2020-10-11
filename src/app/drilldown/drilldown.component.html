@@ -1,1 +1,28 @@
-<p>drilldown works!</p>
+<div class="row">
+  <div class="col-md-6 text-center">
+    <h4>DevOps</h4><hr>
+    <div class="chart-wrapper mb-4">
+      <canvas baseChart
+        [datasets]="chartData"
+        [labels]="chartLabels"
+        [options]="chartOptions"
+        [chartType]="chartType">
+      </canvas>
+    </div>
+    <span><small>Capability headcount: 31</small></span>
+    <hr>
+  </div>
+  <div class="col-md-6 text-center">
+    <h4 class="text-center">TAc</h4><hr>
+    <div class="chart-wrapper mb-4">
+      <canvas baseChart
+        [datasets]="chartData"
+        [labels]="chartLabels"
+        [options]="chartOptions"
+        [chartType]="chartType">
+      </canvas>
+    </div>
+    <span><small>Capability headcount: 65</small></span>
+    <hr>
+  </div>
+</div>
