@@ -1,28 +1,28 @@
 <div class="row">
-  <div class="col-md-6 text-center">
-    <h4>DevOps</h4><hr>
-    <div class="chart-wrapper mb-4">
-      <canvas baseChart
-        [datasets]="chartData"
-        [labels]="chartLabels"
-        [options]="chartOptions"
-        [chartType]="chartType">
-      </canvas>
-    </div>
-    <span><small>Capability headcount: 31</small></span>
-    <hr>
+  <div class="col-md-12">
+    <h4 class="mb-n1">DevOps Capability</h4>
+    <span class="text-muted font-italic"><small>responses: 31</small></span><hr>
   </div>
   <div class="col-md-6 text-center">
-    <h4 class="text-center">TAc</h4><hr>
-    <div class="chart-wrapper mb-4">
+    <h5>Containers</h5><hr>
+    <div class="chart-wrapper">
       <canvas baseChart
-        [datasets]="chartData"
-        [labels]="chartLabels"
+        [datasets]="chartData[0]"
+        [labels]="chartLabels[0]"
         [options]="chartOptions"
         [chartType]="chartType">
       </canvas>
-    </div>
-    <span><small>Capability headcount: 65</small></span>
-    <hr>
+    </div><hr>
+  </div>
+  <div class="col-md-6 text-center">
+    <h5 class="text-center">Infra as Code</h5><hr>
+    <div class="chart-wrapper">
+      <canvas baseChart
+        [datasets]="chartData[1]"
+        [labels]="chartLabels[1]"
+        [options]="chartOptions"
+        [chartType]="chartType">
+      </canvas>
+    </div><hr>
   </div>
 </div>

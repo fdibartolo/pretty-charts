@@ -1,0 +1,25 @@
+{
+  "capability": "DevOps",
+  "categories": [
+    {
+      "category": "Containers",
+      "labels": ["Docker","Openshift","Kubernetes","AWS","GCP","Azure"],
+      "dataset":[
+        { "data": [1, 2, 5, 8, 4, 2], "label": "Desconozco" },
+        { "data": [6, 9, 8, 1, 5, 5], "label": "Familiarizado" },
+        { "data": [5, 5, 1, 8, 6, 3], "label": "Usado" },
+        { "data": [2, 4, 4, 9, 7, 7], "label": "Experto" }
+      ]
+    },
+    {
+      "category": "Infra as Code",
+      "labels": ["Ansible","CloudFormation","Chef","Terraform","Puppet"],
+      "dataset":[
+        { "data": [2, 4, 4, 9, 7], "label": "Desconozco" },
+        { "data": [1, 2, 5, 8, 4], "label": "Familiarizado" },
+        { "data": [5, 5, 1, 8, 6], "label": "Usado" },
+        { "data": [6, 9, 8, 1, 5], "label": "Experto"}
+      ]
+    }
+  ]
+}
