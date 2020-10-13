@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-md-12">
     <h4 class="mb-n1">DevOps Capability</h4>
-    <span class="text-muted font-italic"><small>responses: 31</small></span><hr>
+    <span class="text-muted font-italic"><small>responses: {{responses}}</small></span><hr>
   </div>
   <div class="col-md-6 text-center">
-    <h5>Containers</h5><hr>
+    <h5>{{categories[0]}}</h5><hr>
     <div class="chart-wrapper">
       <canvas baseChart
         [datasets]="chartData[0]"
@@ -15,7 +15,7 @@
     </div><hr>
   </div>
   <div class="col-md-6 text-center">
-    <h5 class="text-center">Infra as Code</h5><hr>
+    <h5>{{categories[1]}}</h5><hr>
     <div class="chart-wrapper">
       <canvas baseChart
         [datasets]="chartData[1]"

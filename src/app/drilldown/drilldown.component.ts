@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Label } from 'ng2-charts';
+import DrilldownData from '../../assets/data/drilldown.json';
 
 @Component({
   selector: 'app-drilldown',
@@ -9,33 +10,17 @@ import { Label } from 'ng2-charts';
 })
 export class DrilldownComponent {
   chartType = 'bar';
-  chartLabels: Label[][] = [[
-    'Docker',
-    'Openshift',
-    'Kubernetes',
-    'AWS',
-    'GCP',
-    'Azure'
-  ],[
-    'Ansible',
-    'CloudFormation',
-    'Chef',
-    'Terraform',
-    'Puppet'
-  ]
-  ];
 
-  chartData: ChartDataSets[][] = [[
-    { data: [1, 2, 5, 8, 4, 2], label: 'Desconozco' },
-    { data: [6, 9, 8, 1, 5, 5], label: 'Familiarizado' },
-    { data: [5, 5, 1, 8, 6, 3], label: 'Usado' },
-    { data: [2, 4, 4, 9, 7, 7], label: 'Experto' }
-  ],[
-    { data: [2, 4, 4, 9, 7], label: 'Desconozco' },
-    { data: [1, 2, 5, 8, 4], label: 'Familiarizado' },
-    { data: [5, 5, 1, 8, 6], label: 'Usado' },
-    { data: [6, 9, 8, 1, 5], label: 'Experto'}
-  ]];
+  responses: number = DrilldownData.filter((d) => d.capability == "DevOps")[0].responses;
+  
+  categories: string[] = DrilldownData.filter((d) => d.capability == "DevOps")[0]
+    .categories.map(c => c.category);
+
+  chartLabels: Label[][] = DrilldownData.filter((d) => d.capability == "DevOps")[0]
+    .categories.map(c => c.labels);
+
+  chartData: ChartDataSets[][] = DrilldownData.filter((d) => d.capability == "DevOps")[0]
+    .categories.map(c => c.dataset);
 
   chartOptions: ChartOptions = {
     responsive: true,
