@@ -1,10 +1,10 @@
 [
   {
-    "capability": "DevOps",
+    "name": "DevOps",
     "responses": 34,
     "categories": [
       {
-        "category": "Containers",
+        "name": "Containers",
         "labels": ["Docker","Openshift","Kubernetes","AWS","GCP","Azure"],
         "dataset":[
           { "data": [1, 2, 5, 8, 4, 2], "label": "Desconozco" },
@@ -14,7 +14,7 @@
         ]
       },
       {
-        "category": "Infra as Code",
+        "name": "Infra as Code",
         "labels": ["Ansible","CloudFormation","Chef","Terraform","Puppet"],
         "dataset":[
           { "data": [2, 4, 4, 9, 7], "label": "Desconozco" },

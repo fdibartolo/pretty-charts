@@ -1,25 +1,14 @@
 <div class="row">
   <div class="col-md-12">
-    <h4 class="mb-n1">DevOps Capability</h4>
-    <span class="text-muted font-italic"><small>responses: {{responses}}</small></span><hr>
+    <h4 class="mb-n1">{{capability.name}} Capability</h4>
+    <span class="text-muted font-italic"><small>responses: {{capability.responses}}</small></span><hr>
   </div>
-  <div class="col-md-6 text-center">
-    <h5>{{categories[0]}}</h5><hr>
+  <div class="col-md-6 text-center" *ngFor="let category of capability.categories">
+    <h5>{{category.name}}</h5><hr>
     <div class="chart-wrapper">
       <canvas baseChart
-        [datasets]="chartData[0]"
-        [labels]="chartLabels[0]"
-        [options]="chartOptions"
-        [chartType]="chartType">
-      </canvas>
-    </div><hr>
-  </div>
-  <div class="col-md-6 text-center">
-    <h5>{{categories[1]}}</h5><hr>
-    <div class="chart-wrapper">
-      <canvas baseChart
-        [datasets]="chartData[1]"
-        [labels]="chartLabels[1]"
+        [datasets]="category.dataset"
+        [labels]="category.labels"
         [options]="chartOptions"
         [chartType]="chartType">
       </canvas>
