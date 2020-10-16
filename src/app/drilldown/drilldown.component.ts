@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ChartOptions } from 'chart.js';
 import DrilldownData from '../../assets/data/drilldown.json';
 
@@ -8,7 +9,7 @@ import DrilldownData from '../../assets/data/drilldown.json';
   styleUrls: ['./drilldown.component.css']
 })
 export class DrilldownComponent {
-  capability = DrilldownData.filter(d => d.name == "DevOps").pop();
+  capability: any;
 
   chartType = 'bar';
 
@@ -22,4 +23,12 @@ export class DrilldownComponent {
       yAxes: [{ stacked: true, type: 'linear' }]
     }
   };
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.capability = DrilldownData.filter(d => d.name == params['capability']).pop();
+    });
+  }
 }

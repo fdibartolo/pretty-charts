@@ -6,7 +6,7 @@ import { DrilldownComponent } from './drilldown/drilldown.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'overview' },
   { path: 'overview', component: OverviewComponent },
-  { path: 'drilldown', component: DrilldownComponent }
+  { path: 'drilldown/:capability', component: DrilldownComponent }
 ];
 
 @NgModule({
