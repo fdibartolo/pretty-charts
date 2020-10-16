@@ -1,26 +1,66 @@
 [
   {
+    "responses": 21,
     "name": "DevOps",
-    "responses": 34,
     "categories": [
       {
         "name": "Containers",
-        "labels": ["Docker","Openshift","Kubernetes","AWS","GCP","Azure"],
-        "dataset":[
-          { "data": [1, 2, 5, 8, 4, 2], "label": "Desconozco" },
-          { "data": [6, 9, 8, 1, 5, 5], "label": "Familiarizado" },
-          { "data": [5, 5, 1, 8, 6, 3], "label": "Usado" },
-          { "data": [2, 4, 4, 9, 7, 7], "label": "Experto" }
+        "labels": ["AWS","Azure","Docker","Google","Kubernetes","Openshift"],
+        "dataset": [
+          {"label": "Desconozco","data": [16,11,7,17,14,17]},
+          {"label": "Familiarizado","data": [4,8,9,4,5,3]},
+          {"label": "Usado","data": [1,2,3,0,2,1]},
+          {"label": "Experto","data": [0,0,2,0,0,0]}
+        ]
+      },
+      {
+        "name": "Development",
+        "labels": [".Net","Java","Javascript/NodeJS","Python","Ruby"],
+        "dataset": [
+          {"label": "Desconozco","data": [10,9,8,6,18]},
+          {"label": "Familiarizado","data": [4,8,5,7,1]},
+          {"label": "Usado","data": [5,4,7,8,2]},
+          {"label": "Experto","data": [2,0,1,0,0]}
         ]
       },
       {
         "name": "Infra as Code",
-        "labels": ["Ansible","CloudFormation","Chef","Terraform","Puppet"],
-        "dataset":[
-          { "data": [2, 4, 4, 9, 7], "label": "Desconozco" },
-          { "data": [1, 2, 5, 8, 4], "label": "Familiarizado" },
-          { "data": [5, 5, 1, 8, 6], "label": "Usado" },
-          { "data": [6, 9, 8, 1, 5], "label": "Experto"}
+        "labels": ["Ansible","Chef","CloudFormation","Puppet","Terraform"],
+        "dataset": [
+          {"label": "Desconozco","data": [18,18,13,18,17]},
+          {"label": "Familiarizado","data": [1,2,2,2,2]},
+          {"label": "Usado","data": [1,0,6,1,1]},
+          {"label": "Experto","data": [1,1,0,0,1]}
+        ]
+      },
+      {
+        "name": "Orchestrators",
+        "labels": ["AWS","Azure","Google","Jenkins","Spinnaker","TeamCity"],
+        "dataset": [
+          {"label": "Desconozco","data": [11,9,20,6,21,20]},
+          {"label": "Familiarizado","data": [8,6,1,5,0,1]},
+          {"label": "Usado","data": [2,4,0,8,0,0]},
+          {"label": "Experto","data": [0,2,0,2,0,0]}
+        ]
+      },
+      {
+        "name": "Scripting",
+        "labels": ["Bash","Powershell","Python","Ruby"],
+        "dataset": [
+          {"label": "Desconozco","data": [6,5,8,18]},
+          {"label": "Familiarizado","data": [6,8,5,1]},
+          {"label": "Usado","data": [7,7,8,2]},
+          {"label": "Experto","data": [2,1,0,0]}
+        ]
+      },
+      {
+        "name": "Source Control",
+        "labels": ["CVS","Git","Mercurial","SVN"],
+        "dataset": [
+          {"label": "Desconozco","data": [15,2,19,15]},
+          {"label": "Familiarizado","data": [5,8,1,2]},
+          {"label": "Usado","data": [1,7,1,2]},
+          {"label": "Experto","data": [0,4,0,2]}
         ]
       }
     ]
