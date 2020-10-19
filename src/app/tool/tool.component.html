@@ -1,58 +1,21 @@
 <div class="row justify-content-center">
   <div class="form-group col-sm-6">
     <input type="text" class="form-control" [(ngModel)]="tool" [ngbTypeahead]="search"
-    placeholder="tools, technologies, frameworks"/>
+    (keyup.enter)="showCharts()" placeholder="tools, technologies, frameworks"/>
   </div>
 </div>
 <div class="row justify-content-center mt-3">
-  <h5>{{tool}}</h5>
+  <h5>{{chartTitle}}</h5>
 </div>
 <div class="row justify-content-center">
-  <div class="col-md-6 text-center mt-5">
-    <h6>Expertos</h6>
+  <div class="col-md-6 text-center mb-2" *ngFor="let group of people">
+    <hr><h6>{{group.title}}</h6><hr>
     <div class="chart">
       <canvas baseChart
-        [data]="pieChartData"
+        [data]="group.data"
         [labels]="pieChartLabels"
         [chartType]="pieChartType"
-        [options]="pieChartOptions"
-        [legend]="pieChartLegend">
-      </canvas>
-    </div>
-  </div>
-  <div class="col-md-6 text-center mt-5">
-    <h6>Usado</h6>
-    <div class="chart">
-      <canvas baseChart
-        [data]="pieChartData"
-        [labels]="pieChartLabels"
-        [chartType]="pieChartType"
-        [options]="pieChartOptions"
-        [legend]="pieChartLegend">
-      </canvas>
-    </div>
-  </div>
-  <div class="col-md-6 text-center mt-5">
-    <h6>Familiarizado</h6>
-    <div class="chart">
-      <canvas baseChart
-        [data]="pieChartData"
-        [labels]="pieChartLabels"
-        [chartType]="pieChartType"
-        [options]="pieChartOptions"
-        [legend]="pieChartLegend">
-      </canvas>
-    </div>
-  </div>
-  <div class="col-md-6 text-center mt-5">
-    <h6>Desconozco</h6>
-    <div class="chart">
-      <canvas baseChart
-        [data]="pieChartData"
-        [labels]="pieChartLabels"
-        [chartType]="pieChartType"
-        [options]="pieChartOptions"
-        [legend]="pieChartLegend">
+        [options]="pieChartOptions">
       </canvas>
     </div>
   </div>
