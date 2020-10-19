@@ -31,5 +31,25 @@
     "SourceControl - SVN",
     "SourceControl - CVS"
   ],
-  "people": []
+  "labels": ["DevOps", "TAc", "Java", "Net"],
+  "dataset": [
+    {
+      "tool": "Development - Ruby",
+      "people": [
+        {"title": "Expertos", "data": [23,12,36,9]},
+        {"title": "Usado", "data": [33,10,6,19]},
+        {"title": "Familiarizado", "data": [15,21,26,24]},
+        {"title": "Desconozco", "data": [13,31,15,31]}
+      ]
+    },
+    {
+      "tool": "Scripting - Ruby",
+      "people": [
+        {"title": "Expertos", "data": [2,2,6,9]},
+        {"title": "Usado", "data": [3,1,6,1]},
+        {"title": "Familiarizado", "data": [1,2,6,4]},
+        {"title": "Desconozco", "data": [3,1,5,3]}
+      ]
+    }
+  ]
 }

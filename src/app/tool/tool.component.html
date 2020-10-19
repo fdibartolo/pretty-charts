@@ -4,6 +4,56 @@
     placeholder="tools, technologies, frameworks"/>
   </div>
 </div>
-<div class="row justify-content-center">
+<div class="row justify-content-center mt-3">
   <h5>{{tool}}</h5>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-6 text-center mt-5">
+    <h6>Expertos</h6>
+    <div class="chart">
+      <canvas baseChart
+        [data]="pieChartData"
+        [labels]="pieChartLabels"
+        [chartType]="pieChartType"
+        [options]="pieChartOptions"
+        [legend]="pieChartLegend">
+      </canvas>
+    </div>
+  </div>
+  <div class="col-md-6 text-center mt-5">
+    <h6>Usado</h6>
+    <div class="chart">
+      <canvas baseChart
+        [data]="pieChartData"
+        [labels]="pieChartLabels"
+        [chartType]="pieChartType"
+        [options]="pieChartOptions"
+        [legend]="pieChartLegend">
+      </canvas>
+    </div>
+  </div>
+  <div class="col-md-6 text-center mt-5">
+    <h6>Familiarizado</h6>
+    <div class="chart">
+      <canvas baseChart
+        [data]="pieChartData"
+        [labels]="pieChartLabels"
+        [chartType]="pieChartType"
+        [options]="pieChartOptions"
+        [legend]="pieChartLegend">
+      </canvas>
+    </div>
+  </div>
+  <div class="col-md-6 text-center mt-5">
+    <h6>Desconozco</h6>
+    <div class="chart">
+      <canvas baseChart
+        [data]="pieChartData"
+        [labels]="pieChartLabels"
+        [chartType]="pieChartType"
+        [options]="pieChartOptions"
+        [legend]="pieChartLegend">
+      </canvas>
+    </div>
+  </div>
 </div>
