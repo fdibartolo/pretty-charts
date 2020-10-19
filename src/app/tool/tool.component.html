@@ -1,0 +1,9 @@
+<div class="row justify-content-center">
+  <div class="form-group col-sm-6">
+    <input type="text" class="form-control" [(ngModel)]="tool" [ngbTypeahead]="search"
+    placeholder="tools, technologies, frameworks"/>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <h5>{{tool}}</h5>
+</div>
