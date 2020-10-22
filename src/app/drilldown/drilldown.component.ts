@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ChartOptions } from 'chart.js';
+import { ChartDataSets, ChartOptions } from 'chart.js';
 import DrilldownData from '../../assets/data/drilldown.json';
 
 @Component({
@@ -9,6 +9,33 @@ import DrilldownData from '../../assets/data/drilldown.json';
   styleUrls: ['./drilldown.component.css']
 })
 export class DrilldownComponent {
+  private static experienceSpecificStyles: { [ experience: string ]: Partial<ChartDataSets> } = {
+    Desconozco: {
+      borderColor: 'hsla( 340, 100%, 50%, 0.75 )',
+      backgroundColor: 'hsla( 340, 100%, 50%, 0.1 )',
+      hoverBackgroundColor: 'hsla( 340, 100%, 50%, 0.4 )',
+      hoverBorderColor: 'hsla( 340, 100%, 50%, 0.75 )'
+    },
+    Familiarizado: {
+      borderColor: 'hsla( 30, 100%, 50%, 0.75 )',
+      backgroundColor: 'hsla( 30, 100%, 50%, 0.1 )',
+      hoverBackgroundColor: 'hsla( 30, 100%, 50%, 0.4 )',
+      hoverBorderColor: 'hsla( 30, 100%, 50%, 0.75 )',
+    },
+    Usado: {
+      borderColor: 'hsla( 215, 100%, 50%, 0.75 )',
+      backgroundColor: 'hsla( 215, 100%, 50%, 0.1 )',
+      hoverBackgroundColor: 'hsla( 215, 100%, 50%, 0.4 )',
+      hoverBorderColor: 'hsla( 215, 100%, 50%, 0.75 )',
+    },
+    Experto: {
+      borderColor: 'hsla( 120, 100%, 25%, 0.75 )',
+      backgroundColor: 'hsla( 120, 100%, 25%, 0.1 )',
+      hoverBackgroundColor: 'hsla( 120, 100%, 25%, 0.4 )',
+      hoverBorderColor: 'hsla( 120, 100%, 25%, 0.75 )',
+    }
+  };
+
   capability: any;
 
   chartType = 'bar';
@@ -30,5 +57,20 @@ export class DrilldownComponent {
     this.route.params.subscribe(params => {
       this.capability = DrilldownData.filter(d => d.name == params['capability']).pop();
     });
+
+    this.capability.categories.forEach(c => {
+      c.dataset.map(d => {
+        Object.assign(d, {
+          borderWidth: 1,
+          hoverBorderWidth: 2,
+          borderSkipped: 'bottom',
+          ...this.getExperienceSpecificStyles(d.label),
+        })
+      })
+    });
+  }
+
+  private getExperienceSpecificStyles( experience: string ): Partial<ChartDataSets> {
+    return DrilldownComponent.experienceSpecificStyles[experience];
   }
 }
