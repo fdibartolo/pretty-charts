@@ -15,12 +15,22 @@ export class ToolComponent {
   chartTitle: string;
   people: any;
 
-  pieChartType: ChartType = 'pie';
-  pieChartOptions: ChartOptions = {
+  chartType: ChartType = 'pie';
+  chartOptions: ChartOptions = {
     responsive: true,
     legend: { position: 'bottom' }
   };
-  pieChartLabels: Label[] = ToolsData.labels;
+  chartLabels: Label[] = ToolsData.labels;
+
+  chartColors = [
+    {
+      borderColor: ['hsla( 120, 100%, 25%, 0.75 )','hsla( 30, 100%, 50%, 0.75 )','hsla( 215, 100%, 50%, 0.75 )','hsla( 340, 100%, 50%, 0.75 )'],
+      backgroundColor: ['hsla( 120, 100%, 25%, 0.1 )','hsla( 30, 100%, 50%, 0.1 )','hsla( 215, 100%, 50%, 0.1 )','hsla( 340, 100%, 50%, 0.1 )'],
+      pointBackgroundColor: ['hsla( 120, 50%, 50%, 1 )','hsla( 30, 50%, 75%, 1 )','hsla( 215, 50%, 75%, 1 )','hsla( 340, 50%, 75%, 1 )'],
+      pointBorderColor: ['hsla( 120, 100%, 25%, 1 )','hsla( 30, 100%, 50%, 1 )','hsla( 215, 100%, 50%, 1 )','hsla( 340, 100%, 50%, 1 )'],
+      pointHoverBorderColor: ['hsla( 120, 100%, 25%, 1 )','hsla( 30, 100%, 50%, 1 )','hsla( 215, 100%, 50%, 1 )','hsla( 340, 100%, 50%, 1 )']
+    }
+  ];
 
   search = (text$: Observable<string>) =>
     text$.pipe(
