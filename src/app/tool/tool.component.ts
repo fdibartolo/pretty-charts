@@ -18,7 +18,23 @@ export class ToolComponent {
   chartType: ChartType = 'pie';
   chartOptions: ChartOptions = {
     responsive: true,
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    tooltips: {
+      titleMarginBottom: 8,
+      bodySpacing: 8,
+      xPadding: 8,
+      yPadding: 8,
+      caretSize: 8,
+      cornerRadius: 8,
+      callbacks: {
+        title: (chartTooltipItem, chartData): string => {
+          return `People count for "${chartData.labels[chartTooltipItem[0].index]}" capability`;
+        },
+        label: (chartTooltipItem, chartData): string => {
+          return ` ${chartData.datasets[0].data[chartTooltipItem.index]} employees`;
+        }
+      }
+    }
   };
   chartLabels: Label[] = ToolsData.labels;
 
