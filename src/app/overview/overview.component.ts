@@ -9,7 +9,6 @@ import OverviewData from '../../assets/data/overview.json';
   styleUrls: ['./overview.component.css']
 })
 export class OverviewComponent {
-
   /**
    * Object containing styles capability-specific styling options for their corresponding datasets.
    */
@@ -19,22 +18,29 @@ export class OverviewComponent {
       backgroundColor: 'hsla( 120, 100%, 25%, 0.1 )',
       pointBackgroundColor: 'hsla( 120, 50%, 50%, 1 )',
       pointBorderColor: 'hsla( 120, 100%, 25%, 1 )',
-      pointHoverBorderColor: 'hsla( 120, 100%, 25%, 1 )',
+      pointHoverBorderColor: 'hsla( 120, 100%, 25%, 1 )'
     },
     Java: {
       borderColor: 'hsla( 30, 100%, 50%, 0.75 )',
       backgroundColor: 'hsla( 30, 100%, 50%, 0.1 )',
       pointBackgroundColor: 'hsla( 30, 50%, 75%, 1 )',
       pointBorderColor: 'hsla( 30, 100%, 50%, 1 )',
-      pointHoverBorderColor: 'hsla( 30, 100%, 50%, 1 )',
+      pointHoverBorderColor: 'hsla( 30, 100%, 50%, 1 )'
     },
     Net: {
       borderColor: 'hsla( 215, 100%, 50%, 0.75 )',
       backgroundColor: 'hsla( 215, 100%, 50%, 0.1 )',
       pointBackgroundColor: 'hsla( 215, 50%, 75%, 1 )',
       pointBorderColor: 'hsla( 215, 100%, 50%, 1 )',
-      pointHoverBorderColor: 'hsla( 215, 100%, 50%, 1 )',
+      pointHoverBorderColor: 'hsla( 215, 100%, 50%, 1 )'
     },
+    TAc: {
+      borderColor: 'hsla( 340, 100%, 50%, 0.75 )',
+      backgroundColor: 'hsla( 340, 100%, 50%, 0.1 )',
+      pointBackgroundColor: 'hsla( 340, 50%, 75%, 1 )',
+      pointBorderColor: 'hsla( 340, 100%, 50%, 1 )',
+      pointHoverBorderColor: 'hsla( 340, 100%, 50%, 1 )'
+    }
   };
 
   chartType = 'radar';
@@ -80,7 +86,7 @@ export class OverviewComponent {
       callbacks: {
         title: ( chartTooltipItem, chartData ): string => {
           const skillName: Label = this.chartLabels[ chartTooltipItem[ 0 ].index ];
-          return `People % with knowledge about "${ skillName }"`;
+          return `Capability % with knowledge about "${ skillName }"`;
         },
         label: ( chartTooltipItem, chartData ): string => {
           const capabilityName: string = chartData.datasets[ chartTooltipItem.datasetIndex ].label;
@@ -100,5 +106,4 @@ export class OverviewComponent {
   private getCapabilitySpecificStyles( capabilityName: string ): Partial<ChartDataSets> {
     return OverviewComponent.capabilitySpecificStyles[ capabilityName ];
   }
-
 }
