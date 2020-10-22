@@ -48,6 +48,23 @@ export class DrilldownComponent {
         gridLines: { display: false }
       }], 
       yAxes: [{ stacked: true, type: 'linear' }]
+    },
+    tooltips: {
+      titleMarginBottom: 8,
+      bodySpacing: 8,
+      xPadding: 8,
+      yPadding: 8,
+      caretSize: 8,
+      cornerRadius: 8,
+      callbacks: {
+        title: (chartTooltipItem, chartData): string => {
+          return `People count exposed to "${chartTooltipItem[0].label}"`;
+        },
+        label: (chartTooltipItem, chartData): string => {
+          const experienceLevel: string = chartData.datasets[chartTooltipItem.datasetIndex].label;
+          return `${experienceLevel}: ${chartTooltipItem.value} employees`;
+        }
+      }
     }
   };
 
