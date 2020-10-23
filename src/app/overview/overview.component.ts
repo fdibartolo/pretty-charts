@@ -43,7 +43,6 @@ export class OverviewComponent {
     }
   };
 
-  chartType = 'radar';
   chartLabels: Label[ ] = [
     'Containers',
     'Development',

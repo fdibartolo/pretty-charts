@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
-import { ChartType, ChartOptions } from 'chart.js';
+import { ChartOptions } from 'chart.js';
 import { Label } from 'ng2-charts';
 import ToolsData from '../../assets/data/tools.json';
 
@@ -15,7 +15,6 @@ export class ToolComponent {
   chartTitle: string;
   people: any;
 
-  chartType: ChartType = 'pie';
   chartOptions: ChartOptions = {
     responsive: true,
     legend: { position: 'bottom' },
