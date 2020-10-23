@@ -42,7 +42,7 @@ export class DrilldownComponent {
     DevOps: 32,
     TAc: 185,
     Microsoft: 356,
-    Java: 173 
+    Java: 171 
   };
 
   chartOptions: ChartOptions = {
