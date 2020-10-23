@@ -9,6 +9,8 @@ import DrilldownData from '../../assets/data/drilldown.json';
   styleUrls: ['./drilldown.component.css']
 })
 export class DrilldownComponent {
+  capability: any;
+
   private static experienceSpecificStyles: { [ experience: string ]: Partial<ChartDataSets> } = {
     Desconozco: {
       borderColor: 'hsla( 340, 100%, 50%, 0.75 )',
@@ -36,9 +38,12 @@ export class DrilldownComponent {
     }
   };
 
-  capability: any;
-
-  chartType = 'bar';
+  private static capabilityHeadcount: {[capabilityName: string]: number} = {
+    DevOps: 32,
+    TAc: 185,
+    Microsoft: 356,
+    Java: 173 
+  };
 
   chartOptions: ChartOptions = {
     responsive: true,
@@ -85,6 +90,11 @@ export class DrilldownComponent {
         })
       })
     });
+  }
+
+  headcount(capability) {
+    const hc = DrilldownComponent.capabilityHeadcount[capability.name];
+    return `of ${hc} - ${Math.round(capability.responses / hc * 100)}%`;
   }
 
   private getExperienceSpecificStyles( experience: string ): Partial<ChartDataSets> {
