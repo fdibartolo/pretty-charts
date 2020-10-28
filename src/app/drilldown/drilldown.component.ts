@@ -40,8 +40,8 @@ export class DrilldownComponent {
 
   private static capabilityHeadcount: {[capabilityName: string]: number} = {
     DevOps: 32,
-    TAc: 185,
-    Microsoft: 356,
+    TAc: 184,
+    Microsoft: 354,
     Java: 171 
   };
 
