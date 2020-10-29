@@ -27,7 +27,7 @@ export class OverviewComponent {
       pointBorderColor: 'hsla( 30, 100%, 50%, 1 )',
       pointHoverBorderColor: 'hsla( 30, 100%, 50%, 1 )'
     },
-    Net: {
+    Microsoft: {
       borderColor: 'hsla( 215, 100%, 50%, 0.75 )',
       backgroundColor: 'hsla( 215, 100%, 50%, 0.1 )',
       pointBackgroundColor: 'hsla( 215, 50%, 75%, 1 )',
